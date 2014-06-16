@@ -31,8 +31,8 @@ script: |-
 
   # Install maven
   wget -O $WERCKER_CACHE_DIR/maven.tgz http://www.us.apache.org/dist/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz
-  cd /opt && tar xzvf $WERCKER_CACHE_DIR/maven.tgz && ln -s apache-maven-* maven
-  ln -s /opt/maven/bin/mvn /usr/bin/mvn
+  cd /opt && sudo tar xzvf $WERCKER_CACHE_DIR/maven.tgz && sudo ln -s apache-maven-* maven
+  sudo ln -s /opt/maven/bin/mvn /usr/bin/mvn
   
   type mvn || { echo "I expected maven to be available. Aborting."; exit 1; }
 
