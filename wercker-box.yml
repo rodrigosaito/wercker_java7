@@ -43,7 +43,7 @@ script: |-
   # Install mysql-client
   sudo apt-get install mysql-client -y -qq
 
-  type mysql-client || { echo "I expected mysql-client to be available. Aborting."; exit 1; }
+  type mysql || { echo "I expected mysql client to be available. Aborting."; exit 1; }
 
   # Install fabric
   sudo apt-get install fabric -y -qq
