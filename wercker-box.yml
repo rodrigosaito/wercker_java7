@@ -29,14 +29,10 @@ script: |-
   # We should have java again
   type java || { echo "I expected java to be available after oracle-java7-installer installation. Aborting."; exit 1; }
 
-  # Install ant
-  sudo apt-get install ant ant-contrib ivy ivy-doc -y -qq
-  
-  # We should have ant and ivy available
-  type ant || { echo "I expected ant to be available. Aborting."; exit 1; }
-
   # Install maven
-  sudo apt-get install maven -y -qq
+  wget -O $WERCKER_CACHE_DIR/maven.tgz http://www.us.apache.org/dist/maven/maven-3/3.2.1/binaries/apache-maven-3.2.1-bin.tar.gz
+  cd /opt && tar xzvf $WERCKER_CACHE_DIR/maven.tgz && ln -s apache-maven-* maven
+  ln -s /opt/maven/bin/mvn /usr/bin/mvn
   
   type mvn || { echo "I expected maven to be available. Aborting."; exit 1; }
 
