@@ -1,5 +1,5 @@
 name: java7
-version: 0.1.0
+version: 0.2.0
 inherits: ruudk/ubuntu14.04@1.0.0
 type: main
 platform: ubuntu@14.04
@@ -44,4 +44,10 @@ script: |-
   sudo apt-get install fabric -y -qq
 
   type fab || { echo "I expected fab to be available. Aborting."; exit 1; }
+
+  # Install docker
+  curl https://get.docker.io/gpg | sudo apt-key add -
+  echo deb https://get.docker.io/ubuntu docker main | sudo tee -a /etc/apt/sources.list.d/docker.list
+  sudo apt-get update
+  sudo apt-get install -y lxc-docker
 
