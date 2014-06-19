@@ -9,6 +9,9 @@ packages:
   - mysql-client
   - fabric
 script: |-
+  sudo apt-get update
+  sudo apt-get install curl -y
+
   sudo apt-get install software-properties-common
 
   # Add webupd8 team repository that contains the 3 major oracle-java versions
