@@ -1,8 +1,8 @@
 name: java7
-version: 0.0.2
-inherits: wercker/ubuntu12.04-webessentials@0.0.5
+version: 0.1.0
+inherits: ruudk/ubuntu14.04@1.0.0
 type: main
-platform: ubuntu@12.04
+platform: ubuntu@14.04
 description: Wercker box for Java development with mysql-client and fabric for deployment
 packages:
   - oracle-java7
